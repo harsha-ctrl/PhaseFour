@@ -1,0 +1,62 @@
+
+<div>
+    <h3>Teacher List</h3>
+
+</div>
+
+<table>
+    <tr>
+    <th>
+        TeacherId
+    </th>
+    <th>
+        TeacherName
+    </th>
+    <th>
+        Address
+    </th>
+    <th>
+        Contact
+    </th>
+    <th>
+        Specialized
+    </th>
+</tr>  
+<tr *ngFor="let t of teacher">
+    <td>{{t.teacherId}}</td>
+    <td>{{t.name}}</td>
+    <td>{{t.address}}</td>
+    <td>{{t.contact}}</td>
+    <td>{{t.specialized}}</td>
+</tr>    
+</table>
+
+
+<div>
+    <h3 style="text-decoration: underline;">Update Teacher</h3>
+    
+    <table border="1px">
+        <tr>
+            <td><input type="text" [(ngModel)]="t.teacherId" placeholder="Enter Teacher Id"></td>
+        </tr>
+
+
+        <tr>
+            <td><input type="text" [(ngModel)]="t.name" placeholder="Enter Teacher Name"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="t.address" placeholder="Enter Teacher Address"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="t.contact" placeholder="Enter Teacher contact"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="t.specialized" placeholder="Enter Teacher Specialized"></td>
+        </tr>
+
+
+    
+    </table>
+    <button (click)="updateTeacher()">update</button>
+</div>
+

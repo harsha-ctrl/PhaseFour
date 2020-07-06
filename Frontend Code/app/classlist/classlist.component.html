@@ -1,0 +1,48 @@
+
+<div>
+    <h3>Class & Student Information</h3>
+
+</div>
+
+<table class="table table-sm" border="1" style="width: 50%;">
+    <tr class="thead-dark">
+    <th>
+        ClassId
+    </th>
+    <th>
+        Class Name
+    </th>
+    <th>
+        Student Id
+    </th>
+    <th>
+        Student Name
+    </th>
+    <th>
+        Student Course
+    </th>
+    <th>
+        Student phone
+    </th>
+    
+</tr>  
+<tr *ngFor="let c of class" style="text-align: center;">
+    <td style="text-align: center;">{{c.classId}}</td>
+    <td style="text-align: center;">{{c.className}}</td>
+    <!--<td >{{c.students[0].studentName}}</td> -->
+ 
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of c.students" ><td style="border-bottom: solid 1px grey;text-align: center;"> {{s.studentId}}</td></tr></table></td>
+    
+  
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of c.students"><td style="border-bottom: solid 1px grey;text-align: center;">{{s.studentName}}</td></tr></table></td>
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of c.students"><td style="border-bottom: solid 1px grey;text-align: center;">{{s.studentCourse}}</td></tr></table></td>
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of c.students"><td style="border-bottom: solid 1px grey;text-align: center;">{{s.studentPhone}}</td></tr></table></td>
+
+    
+   
+</tr> 
+
+    
+
+
+</table>

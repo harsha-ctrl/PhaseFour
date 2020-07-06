@@ -1,0 +1,41 @@
+
+<div>
+    <h3>Class & Subject Information</h3>
+
+</div>
+
+<table border="1">
+    <tr>
+    <th>
+        ClassId
+    </th>
+    <th>
+        Class Name
+    </th>
+    <th>
+        Subject Id
+    </th>
+    <th>
+        Subject Name
+    </th>
+    
+    
+</tr>  
+<tr *ngFor="let c of class" style="text-align: center;">
+    <td style="text-align: center;">{{c.classId}}</td>
+    <td style="text-align: center;">{{c.className}}</td>
+    <!--<td >{{c.subjects[0].subjectName}}</td> -->
+ 
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of c.subjectList" ><td style="border-bottom: solid 1px grey;text-align: center;"> {{s.subjectId}}</td></tr></table></td>
+    
+  
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of c.subjectList"><td style="border-bottom: solid 1px grey;text-align: center;">{{s.subjectName}}</td></tr></table></td>
+ 
+    
+   
+</tr> 
+
+    
+
+
+</table>

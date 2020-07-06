@@ -1,0 +1,24 @@
+<div>
+    <table border="1px">
+        <tr>
+            <tr>
+                <th>
+                    ClassId
+                </th>
+                <th>
+                    ClassName
+                </th>
+                
+            </tr>  
+            <tr *ngFor="let class of c">
+                <td>{{class.classId}}</td>
+                <td>{{class.className}}</td>
+                
+            </tr>   
+        </table>
+    <h3>Delete Class By Id</h3>
+    <input type="number" [(ngModel)]="id"/>
+    <button (click)="deleteClass()">Delete Class By Id</button>
+
+   
+        </div>

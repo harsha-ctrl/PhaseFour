@@ -1,0 +1,80 @@
+
+<div>
+    <h3>Class & Student Information</h3>
+
+</div>
+
+<table border="1">
+    <tr>
+    <th>
+        ClassId
+    </th>
+    <th>
+        Class Name
+    </th>
+    <th>
+        Student Id
+    </th>
+    <th>
+        Student Name
+    </th>
+    <th>
+        Student Course
+    </th>
+    <th>
+        Student phone
+    </th>
+    
+</tr>  
+<tr *ngFor="let c of class" style="text-align: center;">
+    <td style="text-align: center;">{{c.classId}}</td>
+    <td style="text-align: center;">{{c.className}}</td>
+    <!--<td >{{c.students[0].studentName}}</td> -->
+ 
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of c.students" ><td style="border-bottom: solid 1px grey;text-align: center;"> {{s.studentId}}</td></tr></table></td>
+    
+  
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of c.students"><td style="border-bottom: solid 1px grey;text-align: center;">{{s.studentName}}</td></tr></table></td>
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of c.students"><td style="border-bottom: solid 1px grey;text-align: center;">{{s.studentCourse}}</td></tr></table></td>
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of c.students"><td style="border-bottom: solid 1px grey;text-align: center;">{{s.studentPhone}}</td></tr></table></td>
+ 
+</tr> 
+</table>
+
+<div>
+    <h3 style="text-decoration: underline;">Update Student information in the class</h3>
+    
+    <table border="1px">
+
+        <tr>
+            <td><input type="text" [(ngModel)]="C.classId" placeholder="Enter Class Id"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" [(ngModel)]="C.className" placeholder="Enter Class Name"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="student.studentId" placeholder="Enter Student Id"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="student.studentName" placeholder="Enter Student Name"></td>
+        </tr>
+
+
+       <!-- <tr>
+            <td><input type="text" [(ngModel)]="classVar.studentName" placeholder="Enter Student Name"></td>
+        </tr>
+
+        <tr >
+            <td><input type="text" [(ngModel)]="classVar.studentCourse" placeholder="Enter Student Course"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="classVar.studentPhone" placeholder="Enter Student Name"></td>
+        </tr> -->
+
+
+    
+    </table>
+    <button (click)="updatestuClass()">update</button>
+</div>
+

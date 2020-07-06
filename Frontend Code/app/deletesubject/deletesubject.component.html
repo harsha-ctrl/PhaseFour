@@ -1,0 +1,25 @@
+
+
+<div>
+    <table border="1px">
+        <tr>
+            <tr>
+                <th>
+                    SubjectId
+                </th>
+                <th>
+                    SubjectName
+                </th>
+              
+            </tr>  
+            <tr *ngFor="let subject of subjects">
+                <td>{{subject.subjectId}}</td>
+                <td>{{subject.subjectName}}</td>
+             
+            </tr>   
+        </table>
+<h3>Subject Delete By Id</h3>
+<input type="number" [(ngModel)]="id"/>
+<button (click)="deleteSubject()">Delete Subject By Id</button>
+
+</div>

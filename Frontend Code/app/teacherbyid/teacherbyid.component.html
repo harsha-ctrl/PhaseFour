@@ -1,0 +1,32 @@
+
+<div>
+    <h3>Teacher Search By Id</h3>
+    <input type="number" [(ngModel)]="id"/>
+    <button (click)="getTeacherById()">Fetch Teacher By Id</button>
+    <table class="table table-sm" border="1" style="width: 50%;">
+        <tr class="thead-dark">
+            <th>
+                TeacherId
+            </th>
+            <th>
+                TeacherName
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Contact
+            </th>
+            <th>
+                Specialized
+            </th>
+        </tr>  
+        <tr *ngFor="let t of teacher">
+            <td>{{t.teacherId}}</td>
+            <td>{{t.name}}</td>
+            <td>{{t.address}}</td>
+            <td>{{t.contact}}</td>
+            <td>{{t.specialized}}</td>
+        </tr>     
+    </table>
+    </div>

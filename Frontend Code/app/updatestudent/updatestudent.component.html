@@ -1,0 +1,48 @@
+<table>
+    <tr>
+    <th>
+        StudentId
+    </th>
+    <th>
+        StudentName
+    </th>
+    <th>
+        StudentCourse
+    </th>
+    <th>
+        StudentPhone
+    </th>
+</tr>  
+<tr *ngFor="let student of students">
+    <td>{{student.studentId}}</td>
+    <td>{{student.studentName}}</td>
+    <td>{{student.studentCourse}}</td>
+    <td>{{student.studentPhone}}</td>
+</tr>    
+</table>
+<br/>
+<div>
+    <h3 style="text-decoration: underline;">Update Student</h3>
+    
+    <table border="1px">
+        <tr>
+            <td><input type="text" [(ngModel)]="student.StudentId" placeholder="Enter Student Id"></td>
+        </tr>
+
+
+        <tr>
+            <td><input type="text" [(ngModel)]="student.StudentName" placeholder="Enter Student Name"></td>
+        </tr>
+
+
+        <tr>
+            <td><input type="text" [(ngModel)]="student.StudentCourse" placeholder="Enter Student Course"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" [(ngModel)]="student.StudentPhone" placeholder="Enter Student Contact"></td>
+        </tr>
+
+    </table>
+    <button (click)="updateStudent()">update</button>
+</div>

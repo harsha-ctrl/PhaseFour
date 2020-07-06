@@ -1,0 +1,31 @@
+
+
+<div>
+    <table border="1px">
+        <tr>
+            <tr>
+                <th>
+                    StudentId
+                </th>
+                <th>
+                    StudentName
+                </th>
+                <th>
+                    StudentCourse
+                </th>
+                <th>
+                    StudentPhone
+                </th>
+            </tr>  
+            <tr *ngFor="let student of students">
+                <td>{{student.studentId}}</td>
+                <td>{{student.studentName}}</td>
+                <td>{{student.studentCourse}}</td>
+                <td>{{student.studentPhone}}</td>
+            </tr>   
+        </table>
+<h3>Student Delete By Id</h3>
+<input type="number" [(ngModel)]="id"/>
+<button (click)="deleteStudent()">Delete Student By Id</button>
+
+</div>

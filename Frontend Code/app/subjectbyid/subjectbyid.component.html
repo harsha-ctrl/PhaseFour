@@ -1,0 +1,23 @@
+
+<div>
+    <h3>Subject Search By Id</h3>
+    <input type="number" [(ngModel)]="id"/>
+    <button (click)="getSubjectsById()">Fetch Subject By Id</button>
+    <table class="table table-sm" border="1" style="width: 50%;">
+    <tr class="thead-dark">
+        <tr>
+            <th>
+                SubjectId
+            </th>
+            <th>
+                SubjectName
+            </th>
+         
+        </tr>  
+        <tr *ngFor="let subject of subjects">
+            <td>{{subject.subjectId}}</td>
+            <td>{{subject.subjectName}}</td>
+            
+        </tr>   
+    </table>
+    </div>

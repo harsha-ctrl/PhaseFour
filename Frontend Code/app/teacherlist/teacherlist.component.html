@@ -1,0 +1,31 @@
+<div>
+    <h3>Teacher List</h3>
+
+</div>
+
+<table class="table table-dark table-hover table-sm table-striped" style="width: 50%;">
+    <tr>
+    <th>
+        TeacherId
+    </th>
+    <th>
+        TeacherName
+    </th>
+    <th>
+        Address
+    </th>
+    <th>
+        Contact
+    </th>
+    <th>
+        Specialized
+    </th>
+</tr>  
+<tr *ngFor="let t of teacher">
+    <td>{{t.teacherId}}</td>
+    <td>{{t.name}}</td>
+    <td>{{t.address}}</td>
+    <td>{{t.contact}}</td>
+    <td>{{t.specialized}}</td>
+</tr>    
+</table>

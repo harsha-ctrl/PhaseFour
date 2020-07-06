@@ -1,0 +1,35 @@
+<table>
+    <tr>
+    <th>
+        ClassId
+    </th>
+    <th>
+        ClassName
+    </th>
+   
+</tr>  
+<tr *ngFor="let c of class">
+    <td>{{c.classId}}</td>
+    <td>{{c.className}}</td>
+  
+</tr>    
+</table>
+<br/>
+<div>
+    <h3 style="text-decoration: underline;">Update Class</h3>
+    
+    <table border="1px">
+        <tr>
+            <td><input type="text" [(ngModel)]="C.classId" placeholder="Enter Class Id"></td>
+        </tr>
+
+
+        <tr>
+            <td><input type="text" [(ngModel)]="C.className" placeholder="Enter Class Name"></td>
+        </tr>
+
+
+    
+    </table>
+    <button (click)="updateClass()">update</button>
+</div>

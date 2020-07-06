@@ -1,0 +1,26 @@
+<div>
+    <h3 style="text-decoration: underline;">Add Class</h3>
+    <table border="1px">
+
+
+
+        <tr>
+            <td><input type="text" [(ngModel)]="teacher.name" placeholder="Enter Teacher Name"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" [(ngModel)]="teacher.address" placeholder="Enter Teacher address"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="teacher.contact" placeholder="Enter Teacher contact"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="teacher.Specialized" placeholder="Enter Teacher Specialized"></td>
+        </tr>
+
+
+      
+
+    </table>
+    <button (click)="createTeacher()">Create</button>
+</div>

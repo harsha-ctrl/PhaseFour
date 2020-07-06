@@ -1,0 +1,70 @@
+
+<div>
+    <h3>Teacher & Student Information</h3>
+
+</div>
+
+<table border="1">
+    <tr>
+    <th>
+        TeacherId
+    </th>
+    <th>
+        Teacher Name
+    </th>
+    <th>
+        Student Id
+    </th>
+    <th>
+        Student Name
+    </th>
+    <th>
+        Student Course
+    </th>
+    <th>
+        Student phone
+    </th>
+    
+</tr>  
+<tr *ngFor="let t of teacher" style="text-align: center;">
+    <td style="text-align: center;">{{t.teacherId}}</td>
+    <td style="text-align: center;">{{t.name}}</td>
+    <!--<td >{{c.students[0].studentName}}</td> -->
+ 
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of t.studentList" ><td style="border-bottom: solid 1px grey;text-align: center;"> {{s.studentId}}</td></tr></table></td>
+    
+  
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of t.studentList"><td style="border-bottom: solid 1px grey;text-align: center;">{{s.studentName}}</td></tr></table></td>
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of t.studentList"><td style="border-bottom: solid 1px grey;text-align: center;">{{s.studentCourse}}</td></tr></table></td>
+  <td><table style="width: 50%;margin: auto;"><tr *ngFor="let s of t.studentList"><td style="border-bottom: solid 1px grey;text-align: center;">{{s.studentPhone}}</td></tr></table></td>
+ 
+</tr> 
+</table>
+
+<div>
+    <h3 style="text-decoration: underline;">Update Student information in the teacher</h3>
+    
+    <table border="1px">
+
+        <tr>
+            <td><input type="text" [(ngModel)]="T.teacherId" placeholder="Enter Teacher Id"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" [(ngModel)]="T.name" placeholder="Enter Teacher Name"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="student.studentId" placeholder="Enter Student Id"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="student.studentName" placeholder="Enter Student Name"></td>
+        </tr>
+
+
+
+    
+    </table>
+    <button (click)="updatestuTeacher()">update</button>
+</div>
+
+

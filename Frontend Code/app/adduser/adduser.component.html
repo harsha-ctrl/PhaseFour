@@ -1,0 +1,30 @@
+<div>
+    <h3 style="text-decoration: underline;">Please register yourself</h3>
+    <table border="1px"> 
+
+
+
+     
+
+        <tr>
+            <td><input type="text" [(ngModel)]="user.username" placeholder="Enter username"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" [(ngModel)]="user.email" placeholder="Enter email"></td>
+        </tr>
+        <tr>
+            <td><input type="password" [(ngModel)]="user.password" placeholder="Enter password"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="user.is_admin" placeholder="Are you admin (true/false)"></td>
+        </tr>
+
+    </table>
+    <button (click)="createRegistration()">Create</button>
+    <a class="d-block text-center mt-2 small" href="http://localhost:4200/"> Already a user Sign In</a>
+    <p id="t1"></p>
+
+
+
+</div> 

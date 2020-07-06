@@ -1,0 +1,31 @@
+
+
+<div>
+    <table class="table table-sm" style="width: 50%;" border="solid">
+        <thead class="thead-dark">
+        <tr>
+        <th>
+            UserID
+        </th>
+        <th>
+            UserName
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Password
+        </th>
+    </tr>  </thead>
+    <tr *ngFor="let r of users">
+        <td>{{r.userId}}</td>
+        <td>{{r.username}}</td>
+        <td>{{r.email}}</td>
+        <td>{{r.password}}</td>
+    </tr>    
+    </table>
+<h3>Delete User</h3>
+<input type="number" [(ngModel)]="id"/>
+<button (click)="deleteUser()">Delete User By Id</button>
+
+</div>

@@ -1,0 +1,161 @@
+<!-- <!---->
+<div *ngIf="!isShowDivIf">
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Sign In</h5>
+                
+                <form class="form-signin" #form1="ngForm" (ngSubmit)="validateLogin(form1)">
+                  <div class="form-label-group">
+                    <input type="text" id="inputUsername" name="inputUsername" class="form-control" placeholder="Username" required autofocus [(ngModel)]="user.username">
+                    <label for="inputUsername">Username</label>
+                  </div>
+    
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" name="inputPassword"class="form-control" placeholder="Password" required [(ngModel)]="user.password">
+                    <label for="inputPassword">Password</label>
+                  </div>
+    
+                  
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                  <span *ngIf="form1.submitted && isValidUser">Login Successful</span>
+                  <span *ngIf="form1.submitted && !isValidUser">Incorrect</span>
+                  <br/>
+                  <span *ngIf="form1.submitted && isValidUser && admin">Welcome Admin</span>
+    
+                 <!-- <button *ngIf="form1.submitted && isValidUser" (click)="onsuccesslogin()">Proceed</button> -->
+                 <button *ngIf="form1.submitted && isValidUser" (click)="toggleDisplayDivIf()">Proceed</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+    <div *ngIf="  isShowDivIf">
+    <!-- <h3 style="text-decoration: underline;">User Login</h3> -->
+    
+    <div>
+    
+        <span *ngIf="admin"> Admin Space</span><br/>
+        <span >Welcome {{user.username}}</span>
+        <table>
+          <td>
+        <div class="container">
+         
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Students
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li *ngIf="isValidUser && admin"><a routerLink="/addStudent">Add Student</a></li>
+        <li *ngIf="isValidUser"><a routerLink="/StudentList">All Student List</a></li>
+         <li *ngIf="isValidUser && admin"><a routerLink="/updateStudent">Update Student</a></li>
+        
+        <li *ngIf="isValidUser"><a routerLink="/searchStudent">Search Student By Id</a></li>
+        <li *ngIf="isValidUser && admin"><a routerLink="/deleteStudent">Delete Student By Id</a></li>
+            </ul>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="container">
+         
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Class
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li *ngIf="isValidUser && admin"><a routerLink="/addclass">Add Class</a></li>
+              <li *ngIf="isValidUser && admin"><a routerLink="/updateClass">Update Class</a></li>
+              <li *ngIf="isValidUser"><a routerLink="/classlist">Class & Student List</a></li>
+              <li *ngIf="isValidUser"><a routerLink="/searchClass">Search Class By Id</a></li>
+              <li *ngIf="isValidUser && admin"><a routerLink="/updatestuClass">Update Class & student information</a></li>
+              <li *ngIf="isValidUser && admin"><a routerLink="/deleteclass">Delete Class By Id</a></li>
+              <li *ngIf="isValidUser"><a routerLink="/subjectClass">Subject & Class List</a></li>
+            </ul>
+          </div>
+        </div>
+      </td>
+        <td>
+          <div class="container" style="display: inline;"> 
+         
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Teacher
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li *ngIf="isValidUser && admin"><a routerLink="/addTeacher">Add Teacher</a></li>
+              <li *ngIf="isValidUser && admin"><a routerLink="/updateTeacher">Update Teacher</a></li>
+              <li *ngIf="isValidUser"><a routerLink="/teacherlist">All teacher List</a></li>
+              <li *ngIf="isValidUser"><a routerLink="/searchTeacher">Search Teacher By Id</a></li>
+              <li *ngIf="isValidUser"><a routerLink="/stuteachlist">Teacher & Student List</a></li>    
+              <li *ngIf="isValidUser && admin"><a routerLink="/deleteTeacher">Delete Teacher By Id</a></li>
+            </ul>
+          </div>
+        </div> </td>
+        <td>
+        <div class="container">
+         
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Subject
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              
+        <li *ngIf="isValidUser"><a routerLink="/addSubject">Add Subject</a></li>
+        <li *ngIf="isValidUser && admin"><a routerLink="/updateSubject">Update Subject</a></li>
+        <li *ngIf="isValidUser"><a routerLink="/SubjectList">All Subject List</a></li>
+        <li *ngIf="isValidUser"><a routerLink="/searchSubject">Search Subject By Id</a></li>
+       
+        <li *ngIf="isValidUser && admin"><a routerLink="/deleteSubject">Delete Subject By Id</a></li>
+      
+        <li *ngIf="isValidUser"><a routerLink="/teacherSubject">Teacher & Subject List</a></li>
+            </ul>
+          </div>
+          
+        </div></td>
+        <td><div class="container">
+          
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">User Control
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li *ngIf="isValidUser"><a routerLink="/userList">All Users List</a></li>
+              <li *ngIf="isValidUser && admin"><a routerLink="/adduser">Registation</a></li>
+              <li *ngIf="isValidUser && admin"><a routerLink="/deleteUser">Delete User</a></li>
+            </ul>
+          </div>
+        </div>
+      </td>
+     
+      </table>
+      
+    </div>
+    
+    </div>
+    
+    -->
+    <!--<div>
+        <h3 style="text-decoration: underline;">User Login</h3>
+        <table border="1px">
+    
+    
+    
+         
+    
+            <tr>
+                <td><input type="text" [(ngModel)]="user.username" placeholder="Enter username"></td>
+            </tr>
+    
+            <tr>
+                <td><input type="password" [(ngModel)]="user.password" placeholder="Enter password"></td>
+            </tr>
+          
+    
+        </table>
+        <span></span>
+        <button (click)="validateLogin()">Login</button>
+    
+      <p id="t1"></p>
+    
+    </div> --> -->
